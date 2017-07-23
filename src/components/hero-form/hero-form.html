@@ -1,0 +1,32 @@
+<!-- Generated template for the HeroFormComponent component -->
+
+<form #heroForm="ngForm" (ngSubmit)="submitForm()">
+  <ion-item>
+    <ion-label color="primary">Hero Name</ion-label>
+    <ion-input
+      name="name"
+      type="text"
+      clearInput="true"
+      required="true"
+      [(ngModel)]="name">
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary">Major Event</ion-label>
+    <ion-input name="majorEvent"
+      type="text"
+      clearInput="true"
+      [(ngModel)]="majorEvent"
+      #eventField="ngModel">
+    </ion-input>
+  </ion-item>
+  <ion-item no-lines>
+    <button
+      type="submit" ion-button block [disabled]="!heroForm.form.valid">
+      Submit
+    </button>
+    <button type="button" ion-button block outline color="secondary">
+      Reset
+    </button>
+  </ion-item>
+</form>
